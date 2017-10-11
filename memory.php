@@ -11,8 +11,8 @@
 		<div id = "fondo_cerebro">
 		<h3> Memory </h3>
 			<div>
-			<form metod="POST" action="memory.php">
-				<input type="button" id ="boton_inicio" value="Inicia el juego"></input>
+			<form method="POST" action="table_joc.php">
+				<input type="submit" id ="boton_inicio" value="Inicia el juego"></input>
 			</div>			
 	</body>
 </html>

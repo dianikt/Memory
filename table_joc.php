@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Jugemos al Memory</title>	
+		<title>Juguemos al Memory</title>	
 		<script type="text/javascript" scr=javascript.js></script>	
 	</head>
 	<link rel="stylesheet" type="text/css" href="style.css"></link>	
