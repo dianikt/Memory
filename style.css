@@ -53,7 +53,7 @@ table{
 .front{
   transform: rotateY(0deg);
   z-index: 2;
-  background-color: #e93e29;
+  background-image: url("images/fondo.jpeg");
   color: #FFF;
   font: 1em/1.8em Arial;
   display: flex;
