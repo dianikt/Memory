@@ -1,63 +1,72 @@
 #fondo_cerebro{
-	/*background-image: url("images/cerebro1.jpg");*/
+	background-image: url("images/cerebro1.jpg");
 	background-repeat: no-repeat;
 	width: 1000px;
 	height: 700px;
 	margin-left: 130px;	
+  margin-top:-50px;
+}
+h3{
+  font-size: 45px;
+  color:blue;
+  text-align: center;
+  margin-left: 80px;
 }
 #boton_inicio{
-	size:55px;
+	width: 300px;
+  height: 75px;
+  margin-left: 390px;
 }
 table{
 	margin-left: 350px;
-}
-table, tr, td {
-			border: 1px solid blue;
-			background-color:white;
-			text-align:center;
-		}
-		
-		tr, td{
-			
-			width: 55px;
-			height: 55px;						
-		}
-#imagenes{
-	background-color:red;
-}
-#f1_container {
-  position: relative;
-  margin: 10px auto;
-  width: 150px;
-  height: 150px;
-  z-index: 1;
-}
-#f1_container {
-  perspective: 1000;
-}
-#f1_card {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: all 1.0s linear;
-}
-#f1_container #f1_card {
-  transform: rotateY(180deg);
-  box-shadow: -5px 5px 5px #aaa;
+  text-align: center;
 }
 
-.face {
+#flip-container{
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  padding: 5px;
+  position: relative;
+  margin: 1px;
+  width: 50px;
+}
+.card {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: 100% 25px;
+  margin: 3px;
+}
+.card:hover, .card.flip{
+  transform: rotateY(180deg);
+}
+.front, .back{
   position: absolute;
   width: 100%;
   height: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-.face.back {
-  display: block;
-  transform: rotateY(180deg);
-  box-sizing: border-box;
-  padding: 10px;
-  color: white;
   text-align: center;
-  background-color: #aaa;
+}
+.front{
+  transform: rotateY(0deg);
+  z-index: 2;
+  background-color: #e93e29;
+  color: #FFF;
+  font: 1em/1.8em Arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back{
+  transform: rotateY(180deg);
+  background: repeating-linear-gradient(
+    -45deg,
+    #ececec,
+    #ececec 10px,
+    #dedede 10px,
+    #dedede 20px
+  );
 }
