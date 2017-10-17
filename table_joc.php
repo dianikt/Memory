@@ -35,12 +35,11 @@
 				for ($y = 1; $y <= $col; $y++) {			
 					echo"<tr>";					
 						for ($x = 1; $x <= $fil; $x++) {
-						    //$evento = 0;
-							echo "<td>
-								<div class='flip-container'>
-									<div id='card1' class='card' onclick='captura_click(this.e)'>
-									    <figure class='front'></figure>
-									    <figure class='back' >"?>
+						   	echo "<td>
+								<div class='flip-container' onclick='captura_click(event)'>
+									<div id='card1' class='card' >
+									    <figure id='' class='front' ></figure>
+									    <figure id ='' class='back' >"?>
 										<?php										
 										echo "$array[$num]</figure>";
 										$num++;

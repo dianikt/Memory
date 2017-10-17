@@ -6,8 +6,8 @@ body{
 	background-repeat: no-repeat;
 	width: 700px;
 	height: 700px;
-	margin-left: 330px;	
-    margin-top:-70px;
+	margin-left: 300px;	
+  margin-top:-70px;
 }
 h3{
   font-size: 75px;
@@ -23,12 +23,11 @@ h3{
 	font-size: 30px;
     margin:10px 0 0 215px;
 	font-family: 'Pacifico', cursive;  
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
+
 	border-radius: 15px;
 }
 table{
-	margin:-25px 0 0 350px; 	
+	margin:-25px 0 0 300px; 	
 }
 #flip-container{
   -webkit-perspective: 1000px;
@@ -47,7 +46,7 @@ table{
   transform-origin: 100% 25px;
   margin: 8px;
 }
-.card .card.flip{
+.card.flip{
   transform: rotateY(180deg);
 }
 .front, .back{
