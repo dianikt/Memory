@@ -1,27 +1,35 @@
+body{
+	background-color:#70C8F3;
+}
 #fondo_cerebro{
-	background-image: url("images/cerebro1.jpg");
+	background-image: url("cerebro.jpg");
 	background-repeat: no-repeat;
-	width: 1000px;
+	width: 700px;
 	height: 700px;
-	margin-left: 130px;	
-  margin-top:-50px;
+	margin-left: 330px;	
+    margin-top:-70px;
 }
 h3{
-  font-size: 45px;
+  font-size: 75px;
   color:blue;
   text-align: center;
-  margin-left: 80px;
+  margin-top:-15px;
+  font-family: 'Pacifico', cursive; 
+ border  
 }
 #boton_inicio{
 	width: 300px;
-  height: 75px;
-  margin-left: 390px;
+    height: 75px;
+	font-size: 30px;
+    margin:10px 0 0 215px;
+	font-family: 'Pacifico', cursive;  
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 }
 table{
-	margin-left: 350px;
-  text-align: center;
+	margin:-25px 0 0 350px; 	
 }
-
 #flip-container{
   -webkit-perspective: 1000px;
   perspective: 1000px;
@@ -32,14 +40,14 @@ table{
 }
 .card {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   transition: 0.6s;
   transform-style: preserve-3d;
   transform-origin: 100% 25px;
-  margin: 3px;
+  margin: 8px;
 }
-.card:hover, .card.flip{
+.card .card.flip{
   transform: rotateY(180deg);
 }
 .front, .back{
@@ -53,7 +61,7 @@ table{
 .front{
   transform: rotateY(0deg);
   z-index: 2;
-  background-image: url("images/fondo.jpeg");
+  background-image: url("fondo1.jpg");
   color: #FFF;
   font: 1em/1.8em Arial;
   display: flex;
