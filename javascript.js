@@ -5,23 +5,19 @@ var srcImage2;
 	
 function captura_click(event) {  // Funcion para capturar el click del raton
 	var element = event.currentTarget.className;
-
-	var p = 1;
-
-	if (elementoGirado == 0 && element == "flip-container"){
-		elementoGirado++;	
+	
+	if (elementoGirado == 0 && element == "flip-container"){		
 		event.currentTarget.setAttribute("class", "card flip");		
-		srcImage1 = document.getElementById("card1").lastChild.innerHTML;				
-		alert(srcImage1);	
-	}
+		var id = event.currentTarget.id;			
+		alert(id);			
 
-	else if(elementoGirado == 1 && element == "flip-container"){
-		elementoGirado++;
+	}
+	if(elementoGirado == 1 && element == "flip-container"){		
 		event.currentTarget.setAttribute("class", "card flip");	
-		srcImage2 = document.getElementById("card1").lastChild.innerHTML; 
-		alert(srcImage2);	
+		var id1 = event.currentTarget.id;			
+		alert(id1);
 	}
-
+	elementoGirado++;
 
 	//alert(elementoGirado);	
 	var volver = comprueba_cartas();
@@ -37,7 +33,7 @@ function captura_click(event) {  // Funcion para capturar el click del raton
 function comprueba_cartas(){
 	var comprobado = false;
 	if (elementoGirado == 2){
-		if (srcImage1 == srcImage1){
+		if (srcImage1 == srcImage2){
 			comprobado = true;
 		}else{
 			comprobado = false;
@@ -51,6 +47,3 @@ function bloquea_cartaGirada(){
 	srcImage1 = document.getElementById("card1").lastChild.innerHTML;
 
 }
-
-
-

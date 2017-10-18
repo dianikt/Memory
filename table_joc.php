@@ -10,6 +10,10 @@
 		<div id="table_juego">
 		  <table>
 			<?php  
+
+				//$fil =  $_POST["fil"];
+				//$col =  $_POST["col"];
+
 				$fil = 6;
 				$col = 6;
 				$num = 0;
@@ -36,7 +40,8 @@
 					echo"<tr>";					
 						for ($x = 1; $x <= $fil; $x++) {
 						   	echo "<td>
-								<div class='flip-container' onclick='captura_click(event)'>
+								<div class='flip-container' id ="?><?php echo "$array[$num]" ?>
+								<?php echo"onclick='captura_click(event)'>
 									<div id='card1' class='card' >
 									    <figure id='' class='front' ></figure>
 									    <figure id ='' class='back' >"?>
