@@ -6,54 +6,60 @@
 		<script type="text/javascript" src=javascript.js></script>	
 	</head>
 	<link rel="stylesheet" type="text/css" href="style.css"></link>	
-	<body onload="">		
+	<body >		
 		<div id="table_juego">
 		  <table>
-			<?php  
-
+			<?php 
 				//$fil =  $_POST["fil"];
 				//$col =  $_POST["col"];
 
-				$fil = 6;
-				$col = 6;
+				$fil = 4;
+				$col = 4;
 				$num = 0;
-				$numeros = range(1, 19);
-				shuffle($numeros);	
-					
-				$numer = range(1, 19);
-				shuffle($numer);	
-				
-				$array = array();
-				for($i=1;$i<19;$i++){ 					
-					$array[$i] = '<img src="images/'.$numeros[$i].'.jpg" />';
-					//echo $i."\n"; 					
-				}
-				$n = 1;
-				for($i=19;$i<=36;$i++){ 					
-					$array[$i] ='<img src="images/'.$numer[$n].'.jpg" />';
-					$n++;
-					//echo $i; 
-				}				
-				shuffle($array);					
 							
+				$array = array();
+				$cont = 0;
+				for($i=1;$i<=8;$i++){ 
+					$array2 = array();
+					$array2[] = '<img class="imagen" id="'.$i.'" src="images/'.$i.'.jpg"/>';
+					$array2[] = $cont;
+					$array[] = $array2;
+
+					$array2 = array();
+					$array2[] = '<img class="imagen" id="'.$i.'" src="images/'.$i.'.jpg"/>';
+					$array2[] = $cont;
+					$array[] = $array2;
+
+					$cont++;
+				}
+				
+				/*$n = 0;
+				for($j=9;$j<=16;$j++){ 	
+					$n++;				
+					$array[$j] ='<img class="imagen" id="'.$n.'" src="images/'.$n.'.jpg"/>';
+				}	*/
+
+				//shuffle($array);
+
+				$cont = 0;						
 				for ($y = 1; $y <= $col; $y++) {			
 					echo"<tr>";					
 						for ($x = 1; $x <= $fil; $x++) {
-						   	echo "<td>
-								<div class='flip-container' id ="?><?php echo "$array[$num]" ?>
-								<?php echo"onclick='captura_click(event)'>
-									<div id='card1' class='card' >
-									    <figure id='' class='front' ></figure>
-									    <figure id ='' class='back' >"?>
-										<?php										
-										echo "$array[$num]</figure>";
-										$num++;
-								echo "</div>
-								</section>
-							</td>"?>	
-	   					<?php } 
-	   				echo "</tr>" ?>					
-				<?php } ?>								
+						   	echo "<td>";
+								echo "<div cartaid='".$cont."' class='flip-container' id='cardId".$array[$cont][1]."' onclick='captura_click(event)'>";
+									echo "<div class='card'>";
+									    echo "<figure class='front' ></figure>";
+									    echo "<figure class='back' >".$array[$cont][0]."</figure>";
+								echo "</div>";
+								echo "</div>";
+							echo "</td>";
+	   						$cont++;
+	   					} 
+
+	   				echo "</tr>";					
+				 }
+
+				 ?>								
 		  </table>
 		</div>
 	</body>
