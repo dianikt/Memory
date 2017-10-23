@@ -13,15 +13,16 @@
 		<div id = "fondo_cerebro">			
 			<form method="POST" action="table_joc.php" id="carform">
 			<div id="nivel">
-				<select form="carform">
+				<select name="valor">
 					  <option >Elige el nivel</option>
-					  <option name="dos">2x2</option>
-					  <option name="cuatro">4x4</option>
-					  <option name="seis">6x6</option>					 
+					  <option  value="2">2x2</option>
+					  <option  value="4">4x4</option>
+					  <option  value="6">6x6</option>					 
 				</select>
 			<div>
 				<input type="submit" id ="boton_inicio" value="Inicia el juego"></input>
-			</div>			
+			</div>
+			</form>			
 	</body>
 </html>
 

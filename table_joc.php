@@ -6,40 +6,44 @@
 		<script type="text/javascript" src=javascript.js></script>	
 	</head>
 	<link rel="stylesheet" type="text/css" href="style.css"></link>	
-	<body >		
+	<body >	
+	<br><br>
+	
+		<div id = 'variables'>
+			<div id = 'intentos'> Intentos: </div>
+			<div id = 'aciertos'> Aciertos: </div>
+		</div>
+		
 		<div id="table_juego">
 		  <table>
 			<?php 
-				//$fil =  $_POST["fil"];
-				//$col =  $_POST["col"];
-
-				$fil = 4;
-				$col = 4;
+				$fil =  $_POST["valor"];
+				$col =  $_POST["valor"];
+				
 				$num = 0;
+				if ($fil == 2)$num = 2;
+				if ($fil == 4)$num = 8;
+				if ($fil == 6)$num = 18;
 							
 				$array = array();
-				$cont = 0;
-				for($i=1;$i<=8;$i++){ 
+				$cont = 1;
+				for($i=1;$i<=$num;$i++){ 
 					$array2 = array();
 					$array2[] = '<img class="imagen" id="'.$i.'" src="images/'.$i.'.jpg"/>';
 					$array2[] = $cont;
 					$array[] = $array2;
-
-					$array2 = array();
-					$array2[] = '<img class="imagen" id="'.$i.'" src="images/'.$i.'.jpg"/>';
-					$array2[] = $cont;
-					$array[] = $array2;
-
 					$cont++;
-				}
-				
-				/*$n = 0;
-				for($j=9;$j<=16;$j++){ 	
-					$n++;				
-					$array[$j] ='<img class="imagen" id="'.$n.'" src="images/'.$n.'.jpg"/>';
-				}	*/
+				}			
+				$n = 1;
+				for($j=($num+1);$j<=($num*2);$j++){ 	
+					$array2 = array();
+					$array2[] = '<img class="imagen" id="'.$n.'" src="images/'.$n.'.jpg"/>';
+					$array2[] = $n;
+					$array[] = $array2;
+					$n++;
+				}	
 
-				//shuffle($array);
+				shuffle($array);
 
 				$cont = 0;						
 				for ($y = 1; $y <= $col; $y++) {			
@@ -47,12 +51,12 @@
 						for ($x = 1; $x <= $fil; $x++) {
 						   	echo "<td>";
 								echo "<div cartaid='".$cont."' class='flip-container' id='cardId".$array[$cont][1]."' onclick='captura_click(event)'>";
-									echo "<div class='card'>";
-									    echo "<figure class='front' ></figure>";
-									    echo "<figure class='back' >".$array[$cont][0]."</figure>";
-								echo "</div>";
-								echo "</div>";
-							echo "</td>";
+									echo "<div class='card'>\n";
+									    echo "<figure class='front' ></figure>\n";
+									    echo "<figure class='back' >".$array[$cont][0]."</figure>\n";
+								echo "</div>\n";
+								echo "</div>\n";
+							echo "</td>\n";
 	   						$cont++;
 	   					} 
 
@@ -60,7 +64,8 @@
 				 }
 
 				 ?>								
-		  </table>
-		</div>
+		  </table>		  
+		</div><br><br><br>
+
 	</body>
 </html>
