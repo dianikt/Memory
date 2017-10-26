@@ -6,16 +6,16 @@
 		<script type="text/javascript" src=javascript.js></script>	
 	</head>
 	<link rel="stylesheet" type="text/css" href="style.css"></link>	
-	<body >	
-	<br><br>
 	
-		<div id = 'variables'>
-			<div id = 'intentos'> Intentos: </div>
-			<div id = 'aciertos'> Aciertos: </div>
+	<body onload="muestraReloj()">	
+		<br><br>	
+		<div id = 'variables'>	<br>		
+			Tiempo: <span id="minutos">0</span>:<span id="segundos">0</span>			
+			<div id ='puntuacion'> Puntuacion: </div>	
+			<?php echo "<button id ='ayuda' onclick ='ayudas()' value='Ayuda'>Ayuda</button>" ?>
 		</div>
-		
 		<div id="table_juego">
-		  <table>
+		  <table id="tabla">
 			<?php 
 				$fil =  $_POST["valor"];
 				$col =  $_POST["valor"];
@@ -41,16 +41,14 @@
 					$array2[] = $n;
 					$array[] = $array2;
 					$n++;
-				}	
-
+				}
 				shuffle($array);
-
 				$cont = 0;						
 				for ($y = 1; $y <= $col; $y++) {			
 					echo"<tr>";					
 						for ($x = 1; $x <= $fil; $x++) {
 						   	echo "<td>";
-								echo "<div cartaid='".$cont."' class='flip-container' id='cardId".$array[$cont][1]."' onclick='captura_click(event)'>";
+								echo "<div name='card' cartaid='".$cont."' class='flip-container' id='cardId".$array[$cont][1]."' onclick='captura_click(event,$num)'>";
 									echo "<div class='card'>\n";
 									    echo "<figure class='front' ></figure>\n";
 									    echo "<figure class='back' >".$array[$cont][0]."</figure>\n";
@@ -62,10 +60,18 @@
 
 	   				echo "</tr>";					
 				 }
-
 				 ?>								
 		  </table>		  
 		</div><br><br><br>
-
+		<div id="datosJug">
+			<?php echo '<form method="POST" action="ranking.php" >';
+				echo '<label>Introduce tu nombre:</label>';
+				echo '<input type="text" name="nombre"></input><br>';
+				echo '<label>Intentos:</label>';
+				echo '<input type="text" id="intent" name="intentos" value="0"></input><br>';
+				echo '<input type="submit" id ="envio_datos" value="Envia datos"></input>';
+				echo '</form>';
+			?>	
+		</div>
 	</body>
 </html>

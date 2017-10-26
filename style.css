@@ -1,47 +1,109 @@
 body{
-	background-color:#70C8F3;
-}
-#fondo_cerebro{
-	background-image: url("cerebro.jpg");
+	background-image: url("fondo_grande.jpg");
 	background-repeat: no-repeat;
-	width: 700px;
-	height: 700px;
-	margin-left: 300px;	
-  margin-top:-70px;
 }
 h3{
-  font-size: 75px;
-  color:blue;
+  font-size: 115px; 
   text-align: center;
-  margin-top:-15px;
-  font-family: 'Pacifico', cursive; 
- border  
+  color :black;
+  margin-top:55px;
+  font-family: 'Libre Barcode 39 Extended Text', cursive;
+}
+h3:hover{
+	color:white;
+}
+#iniciar{
+	background-color:white;
+	width: 350px;
+    height: 200px;
+	margin:-45px 0 0 450px;
+	border:3px solid black;
+	border-radius:25px;
 }
 #boton_inicio{
-	width: 300px;
+	width: 250px;
     height: 75px;
 	font-size: 30px;
-    margin:10px 0 0 215px;
+    margin:10px 0 0 55px;
 	font-family: 'Pacifico', cursive;  
-
-	border-radius: 15px;
+	border-radius: 5px;
 }
-#table_juego{
-  margin:-25px 0 0 300px; 
+#level{
+	height:40px;
+	width:140px;
+	background-color:black;
+	border-radius:5px;
+	color:white;
+	margin:10px 0 0 115px;
+}
+#datosJug{
+	background-color:white;
+	display:inline;
+	position:absolute;
+	margin:0 0 0 -580px;
+	padding:15px;
+	border:2px solid black;
+	border-radius:25px;
+}
+#ranking{	
+	background-color:white;
+	display:inline;
+	position:absolute;
+	margin:0 0 0 0;
+	padding:15px;
+	border:2px solid black;
+	border-radius:25px;	
+}
+#tabla_ranking.tr{
+	background-color:black;
+}
+#tabla_ranking.tr,td{
+	border:2px solid black;
+	border-radius:5px;	
+	text-align:center;
+	font-size: 18px;	
+}
+#ranking_boton{
+	height:40px;
+	width:140px;
+	text-decoration: none;
+	background-color:black;
+	color:white;
+	margin:10px 0 0 135px;
 }
 #variables{
-  margin:0 0 0 100px; 
-
+	font-size: 20px;
+	background-color:white;
+	display:block;
+	height:140px;
+	width:200px;
+	text-align:center;
+	margin:0 0 0 100px; 
+	border:2px solid black;
+	border-radius:25px;
+}
+#ayuda{
+	width: 85px;
+    height: 45px;
+	font-size: 15px;
+	background-color:black;
+	color: white;
+	border-radius:15px;
+}
+#table_juego{
+  margin:-155px 0 0 400px; 
+  float:left;
+  background-color:black;
+  border-radius:5px;  
 }
 #flip-container{
    transform: rotateY(180deg);
   -webkit-perspective: 1000px;
   perspective: 1000px;
-  padding: 5px;
+  padding:5px;
   position: relative;
   margin: 1px;
   width: 50px;
-
 }
 .card {
   position: relative;
@@ -50,7 +112,7 @@ h3{
   transition: 0.6s;
   transform-style: preserve-3d;
   transform-origin: 100% 25px;
-  margin: 8px;
+  margin:8px;
 }
 .card.flip{
   transform: rotateY(180deg);
@@ -62,6 +124,8 @@ h3{
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   text-align: center;
+  /*margin:0 0 0 1px;*/
+  border-radius:5px;  
 }
 .front{
   transform: rotateY(0deg);
@@ -76,4 +140,5 @@ h3{
 .back{
   transform: rotateY(180deg);  
 }
+
 
